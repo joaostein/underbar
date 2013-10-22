@@ -81,6 +81,11 @@ var _ = { };
   _.reject = function(collection, iterator) {
     // TIP: see if you can re-use _.select() here, without simply
     // copying code in and modifying it
+    var result = _.filter(collection, function (value) {
+      return !iterator(value);
+    });
+    
+    return result;
   };
 
   // Produce a duplicate-free version of the array.
