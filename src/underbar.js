@@ -84,12 +84,23 @@ var _ = { };
     var result = _.filter(collection, function (value) {
       return !iterator(value);
     });
-    
+
     return result;
   };
 
   // Produce a duplicate-free version of the array.
   _.uniq = function(array) {
+    var result = array.slice(0);
+
+    _.each(result, function (value, index, collection) {
+      for (var i = index + 1; i < collection.length; i++) {
+        if (value === collection[i]) {
+          result.splice(i, 1);
+        }
+      }
+    });
+
+    return result;
   };
 
 
