@@ -42,7 +42,7 @@ var _ = { };
       for (var i = 0; i < collection.length; i++) {
         iterator(collection[i], i, collection);
       }
-    } else if (typeof(collection) === "object") {
+    } else {
       for (var key in collection) {
         iterator(collection[key], key, collection);
       }
@@ -138,6 +138,7 @@ var _ = { };
 
   // Calls the method named by methodName on each value in the list.
   _.invoke = function(list, methodName, args) {
+
   };
 
   // Reduces an array or object to a single value by repetitively calling
