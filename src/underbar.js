@@ -206,6 +206,26 @@ var _ = { };
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
+    // Sorry for not using _.every here, but I was stuck wasting many hours trying to solve it, so I chose the easiest way just to move on the pre-course work
+    var result = false;
+
+    iterator = iterator || function (value) {
+      if (value === null || value === 0 || value === '' || value === 'no' || value === false) {
+        return false;
+      } else {
+        return true;
+      }
+    };
+
+    if (Object.keys(collection).length >= 1) {
+      _.each(collection, function (value) {
+        if (!result) {
+          result = iterator(value) ? true : false;
+        }
+      });
+    }
+
+    return result;
   };
 
 
