@@ -427,7 +427,7 @@ describe("shuffle", function() {
   });
 });
 
-describe("sortBy", function() {
+xdescribe("sortBy", function() {
   it("should sort by age", function() {
     var people = [{name : 'curly', age : 50}, {name : 'moe', age : 30}];
     people = _.sortBy(people, function(person) {
@@ -477,14 +477,14 @@ describe("sortBy", function() {
   });
 });
 
-describe("flatten", function() {
+xdescribe("flatten", function() {
   it("can flatten nested arrays", function() {
     var nestedArray = [1, [2], [3, [[[4]]]]];
     expect(_.flatten(nestedArray)).to.eql([1,2,3,4]);
   });
 });
 
-describe("zip", function() {
+xdescribe("zip", function() {
   it("should zip together arrays of different lengths", function() {
     var names = ['moe', 'larry', 'curly'], ages = [30, 40, 50], leaders = [true];
     expect(_.zip(names, ages, leaders)).to.eql([
@@ -495,7 +495,7 @@ describe("zip", function() {
   });
 });
 
-describe("intersection", function() {
+xdescribe("intersection", function() {
   it("should take the set intersection of two arrays", function() {
     var stooges = ['moe', 'curly', 'larry'];
     var leaders = ['moe', 'groucho'];
@@ -503,7 +503,7 @@ describe("intersection", function() {
   });
 });
 
-describe("difference", function() {
+xdescribe("difference", function() {
   it("should return the difference between two arrays", function() {
     var diff = _.difference([1,2,3], [2,30,40]);
     expect(diff).to.eql([1,3]);
@@ -515,7 +515,7 @@ describe("difference", function() {
   });
 });
 
-describe("throttle", function() {
+xdescribe("throttle", function() {
   it('throttled functions should only be able to be called again after the specified time', function(done) {
     var counter = 0;
     var incr = function() {
