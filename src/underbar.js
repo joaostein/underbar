@@ -348,6 +348,16 @@ var _ = { };
 
   // Shuffle an array.
   _.shuffle = function(array) {
+    var arrayCopy = array.slice(0);
+    var result = [];
+
+    _.each(arrayCopy, function () {
+      var random = Math.floor(Math.random() * arrayCopy.length);
+      result.push(arrayCopy[random]);
+      arrayCopy.splice(random, 1);
+    });
+
+    return result;
   };
 
 
